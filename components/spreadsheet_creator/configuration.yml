@@ -2,5 +2,7 @@ description: This component takes in a list of dictionaries containing product U
   and reviews from the ReviewExtractor component and creates a spreadsheet with the
   link and reviews for each product. The URL of the generated spreadsheet is returned
   as output.
+input-class: SpreadsheetCreatorInputDict
 name: SpreadsheetCreator
+output-class: SpreadsheetCreatorOutputDict
 parameters: {}
