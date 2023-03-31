@@ -1,6 +1,8 @@
 description: This component will take the input product name and use web scraping
   techniques (e.g., BeautifulSoup for HTML parsing) to search Amazon for the top 50
   related products. It will return a list of product URLs.
+input-class: AmazonSearchScraperInput
 name: AmazonSearchScraper
+output-class: AmazonSearchScraperOutput
 parameters:
   results_limit: 50
