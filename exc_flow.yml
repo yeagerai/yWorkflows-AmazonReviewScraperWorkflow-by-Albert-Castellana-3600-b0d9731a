@@ -1,0 +1,37 @@
+yaml
+components:
+  node-0:
+    class: InputProduct
+    module-path: components/input_product/input_product.py
+    configuration: !include components/input_product/configuration.yml
+  node-1:
+    class: AmazonSearchScraper
+    module-path: components/amazon_search_scraper/amazon_search_scraper.py
+    configuration: !include components/amazon_search_scraper/configuration.yml
+  node-2:
+    class: ReviewExtractor
+    module-path: components/review_extractor/review_extractor.py
+    configuration: !include components/review_extractor/configuration.yml
+  node-3:
+    class: SpreadsheetCreator
+    module-path: components/spreadsheet_creator/spreadsheet_creator.py
+    configuration: !include components/spreadsheet_creator/configuration.yml
+  node-4:
+    class: OutputProductReviews
+    module-path: components/output_product_reviews/output_product_reviews.py
+    configuration: !include components/output_product_reviews/configuration.yml
+
+flow-matrix:
+  [
+    [0, 1, 0, 0, 0],
+    [0, 0, 1, 0, 0],
+    [0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 0],
+  ]
+
+mapper:
+  node-1.AmazonSearchScraperIn.product_name: node-0.InputProductOut.product_name
+  node-2.ReviewExtractorIn.product_urls: node-1.AmazonSearchScraperOut.product_urls
+  node-3.SpreadsheetCreatorIn.product_reviews: node-2.ReviewExtractorOut.product_reviews
+  node-4.OutputProductReviewsIn.spreadsheet_url: node-3.SpreadsheetCreatorOut.spreadsheet_url
