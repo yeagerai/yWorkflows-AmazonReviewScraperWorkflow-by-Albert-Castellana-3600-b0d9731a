@@ -1,0 +1,12 @@
+python
+# requirements.txt
+yaml==5.4.1
+openpyxl==3.0.9
+pygsheets==2.0.6
+google-auth==2.3.3
+google-auth-oauthlib==0.4.6
+google-auth-httplib2==0.1.0
+google-api-python-client==2.31.0
+dotenv==0.19.2
+fastapi==0.70.0
+pydantic==1.8.2
