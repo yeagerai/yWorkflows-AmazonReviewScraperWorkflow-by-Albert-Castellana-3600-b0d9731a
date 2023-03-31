@@ -9,5 +9,7 @@ description: 'This workflow consists of the following components:
   4. Return the spreadsheet_url as output in the OutputProductReviews data model.
 
   '
+input-class: InputProduct
 name: AmazonReviewScraperWorkflow
+output-class: OutputProductReviews
 parameters: {}
