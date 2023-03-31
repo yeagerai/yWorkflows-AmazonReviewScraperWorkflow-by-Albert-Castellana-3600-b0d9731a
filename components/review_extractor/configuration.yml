@@ -1,0 +1,6 @@
+description: This component will take in the list of product URLs from the AmazonSearchScraper
+  component and use web scraping techniques to extract the reviews for each product.
+  It will return a list of dictionaries containing the product URL and associated
+  reviews.
+name: ReviewExtractor
+parameters: {}
