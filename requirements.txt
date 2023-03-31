@@ -1,0 +1,5 @@
+
+typing==3.7.4.3
+dotenv==0.19.2
+fastapi==0.74.0
+pydantic==1.9
